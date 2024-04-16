@@ -27,19 +27,19 @@ Before deploying the solution, you have the flexibility to customize any paramet
 
 To deploy this project, follow these steps:
 
-### 1. Navigate to the `infra` directory:
+**1. Navigate to the `infra` directory:**
 ```bash
 cd infra/
 ```
-### 2. Initialize the Terraform Repository:
+**2. Initialize the Terraform Repository:**
 ```bash
 terraform init
 ```
-### 3. Create the execution plan
+**3. Create the execution plan**
 ```bash
 terraform plan
 ```
-### 4. Apply the changes
+**4. Apply the changes**
 ```bash
 terraform apply
 ```
