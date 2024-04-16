@@ -64,4 +64,9 @@ You can view the metrics in the CloudWatch console. CloudWatch provides a dashbo
 
 ### ALB
 
-Similar to ECS, Application Load Balancer (ALB) metrics provide insights into the performance, health, and behavior of your load balancer and the applications it serves. Some of the useful metrics available are, but not limited to Target Response Time, Number of Requests, HTTP Error Rate (4xx/5xx), ELB Error Rate (4xx/5xx), Active Connection Count
+Similar to ECS, Application Load Balancer (ALB) metrics provide insights into the performance, health, and behavior of your load balancer and the applications it serves. Some of the useful metrics available are, but not limited to:
+- Target Response Time
+- Number of Requests
+- HTTP Error Rate (4xx/5xx)
+- ELB Error Rate (4xx/5xx)
+- Active Connection Count
