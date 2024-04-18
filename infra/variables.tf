@@ -11,15 +11,15 @@ variable "environment" {
 }
 
 variable "api_image" {
-  default = "brunorubin/genratrapi"
+  default = "brunorubin/ecs-sample"
 }
 
 variable "container_port" {
-    default = "8080"
+  default = "8080"
 }
 
 variable "scale_min" {
-  default = "3"
+  default = "2"
 }
 
 variable "scale_max" {

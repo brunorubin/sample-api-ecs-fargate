@@ -20,7 +20,7 @@ module "vpc" {
 
 /* Security Group for ECS */
 resource "aws_security_group" "ecs_service" {
-  vpc_id      = "${module.vpc.vpc_id}"
+  vpc_id      = module.vpc.vpc_id
   name        = "${var.environment}-ecs-service-sg"
   description = "Allow egress from container"
 
@@ -43,7 +43,7 @@ resource "aws_security_group" "ecs_service" {
 resource "aws_security_group" "alb_inbound_sg" {
   name        = "alb-inbound-sg"
   description = "Allow HTTP from Anywhere into ALB"
-  vpc_id      = "${module.vpc.vpc_id}"
+  vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port   = 80

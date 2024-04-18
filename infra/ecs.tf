@@ -13,8 +13,8 @@ resource "aws_ecs_service" "api" {
 
   network_configuration {
     #assign_public_ip = true
-    security_groups  = [aws_security_group.ecs_service.id]
-    subnets          = module.vpc.private_subnets
+    security_groups = [aws_security_group.ecs_service.id]
+    subnets         = module.vpc.private_subnets
   }
 
   /* Load Balancer configuration */
@@ -28,7 +28,7 @@ resource "aws_ecs_service" "api" {
     create_before_destroy = true
   }
 
-  deployment_maximum_percent = 200
+  deployment_maximum_percent         = 200
   deployment_minimum_healthy_percent = 100
 }
 
@@ -42,7 +42,7 @@ resource "aws_ecs_task_definition" "api_task" {
   execution_role_arn       = aws_iam_role.ecs-role.arn
   task_role_arn            = aws_iam_role.ecs-role.arn
 
-  container_definitions    = <<DEFINITION
+  container_definitions = <<DEFINITION
 [
   {
     "cpu": 256,
@@ -68,7 +68,7 @@ resource "aws_ecs_task_definition" "api_task" {
 ]
 DEFINITION
 
-  depends_on        = [ aws_alb_listener.api_listener ]
+  depends_on = [aws_alb_listener.api_listener]
 }
 
 /* Cloudwatch Log Group */
