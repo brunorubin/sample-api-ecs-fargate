@@ -6,9 +6,9 @@ Terraform project for provisioning a [sample NodeJS API](https://github.com/yavi
 
 ![Diagram](./docs/diagram.png)
 
-Inbound traffic is routed through an ALB exposed to the internet.
-Using the ALB's the requests are forwarded to the ECS service and tasks (containers).
-Since ECS Fargate tasks are launched in a private subnet, there's a pair of NAT Gateways to route outbound traffic out to the internet.
+- Inbound traffic is routed through an ALB exposed to the internet.
+- Using the ALB's, the requests are forwarded to the ECS service and tasks (containers).
+- Since ECS Fargate tasks are launched in a private subnet, there's a pair of NAT Gateways to route outbound traffic out to the internet (used by ECS to pull the image from DockerHub).
 
 ## Component details
 
@@ -27,19 +27,19 @@ Before deploying the solution, you have the flexibility to customize any paramet
 
 To deploy this project, follow these steps:
 
-### 1. Navigate to the `infra` directory:
+**1. Navigate to the `infra` directory:**
 ```bash
 cd infra/
 ```
-### 2. Initialize the Terraform Repository:
+**2. Initialize the Terraform Repository:**
 ```bash
 terraform init
 ```
-### 3. Create the execution plan
+**3. Create the execution plan**
 ```bash
 terraform plan
 ```
-### 4. Apply the changes
+**4. Apply the changes**
 ```bash
 terraform apply
 ```
@@ -64,4 +64,9 @@ You can view the metrics in the CloudWatch console. CloudWatch provides a dashbo
 
 ### ALB
 
-Similar to ECS, Application Load Balancer (ALB) metrics provide insights into the performance, health, and behavior of your load balancer and the applications it serves. Some of the useful metrics available are, but not limited to Target Response Time, Number of Requests, HTTP Error Rate (4xx/5xx), ELB Error Rate (4xx/5xx), Active Connection Count
+Similar to ECS, Application Load Balancer (ALB) metrics provide insights into the performance, health, and behavior of your load balancer and the applications it serves. Some of the useful metrics available are, but not limited to:
+- Target Response Time
+- Number of Requests
+- HTTP Error Rate (4xx/5xx)
+- ELB Error Rate (4xx/5xx)
+- Active Connection Count
